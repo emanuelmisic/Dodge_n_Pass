@@ -23,7 +23,7 @@ class Level:
                 x = col_index * TILE_SIZE
                 y = row_index * TILE_SIZE
                 if col == 'x':
-                    Border((x,y),[self.visible_sprites])
+                    Border((x,y),[self.visible_sprites, self.obstacle_sprites])
                 if col == 'p':
                     self.player = Player((x,y),[self.visible_sprites],self.obstacle_sprites)
                     
