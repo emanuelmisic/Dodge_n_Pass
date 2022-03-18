@@ -1,0 +1,31 @@
+Hello!
+This is a plan for a game.
+The game will have a player moving through the room while avoiding objects.
+
+CONCEPT:
+    Main Menu:
+        - Play
+            - Select Level
+                level_selection()
+        - Options
+            - How to Play
+                instructions()
+            - Sound
+                music_vol()
+                sfx_vol()
+            - Reset Progress
+                reset_all()
+        - Shop
+            - skins
+                skin_selection()
+            - upgrade
+                - upgrade movement speed
+        - Reset Progress
+        - Exit
+            quit()
+
+    Game(Play):
+        - Select Level
+            level_selection()
+                - Level x
+                    game()
