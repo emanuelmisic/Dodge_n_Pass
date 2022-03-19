@@ -29,7 +29,7 @@ class Level:
                 if col == 'p':
                     self.player = Player((x,y),[self.visible_sprites],self.obstacle_sprites)
                 if col == 'e':
-                    Exit((x,y),[self.visible_sprites, self.benevolent_sprites])
+                    Exit((x-24,y),[self.visible_sprites, self.benevolent_sprites])
                     
     def run(self):
         self.visible_sprites.draw(self.display_surface)

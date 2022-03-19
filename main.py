@@ -11,7 +11,7 @@ class Game:
         # GENERAL SETUP
         pg.init()
         self.screen = pg.display.set_mode((WIDTH, HEIGHT))
-        pg.display.set_caption("My Game")
+        pg.display.set_caption("Dodge 'n Pass")
         self.clock = pg.time.Clock()
         
         self.level = Level()
