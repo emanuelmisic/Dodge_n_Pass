@@ -3,6 +3,7 @@ from settings import *
 
 from player import Player
 from border import Border
+from exit import Exit
 
 
 class Level:
@@ -14,6 +15,7 @@ class Level:
         # sprite group setup
         self.visible_sprites = pg.sprite.Group()
         self.obstacle_sprites = pg.sprite.Group()
+        self.benevolent_sprites = pg.sprite.Group()
         
         self.create_map()
   
@@ -26,6 +28,8 @@ class Level:
                     Border((x,y),[self.visible_sprites, self.obstacle_sprites])
                 if col == 'p':
                     self.player = Player((x,y),[self.visible_sprites],self.obstacle_sprites)
+                if col == 'e':
+                    Exit((x,y),[self.visible_sprites, self.benevolent_sprites])
                     
     def run(self):
         self.visible_sprites.draw(self.display_surface)

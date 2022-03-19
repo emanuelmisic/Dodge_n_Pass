@@ -8,8 +8,6 @@ class Player(pg.sprite.Sprite):
         self.image = pg.image.load(os.path.join('assets', 'player.png'))
         self.rect = self.image.get_rect(topleft = pos)
 
-        self.borderrect = Border.get_rectvalue
-
         self.obstacle_sprites = obstacle_sprites
 
         self.direction = pg.math.Vector2()

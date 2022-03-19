@@ -23,7 +23,6 @@ class Game:
                     pg.quit()
                     exit()
                     
-            # self.screen.fill('black')
             self.screen.blit(BG, (0,0))
             self.level.run()
             pg.display.update()
