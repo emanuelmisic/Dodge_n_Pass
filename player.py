@@ -1,5 +1,4 @@
 import pygame as pg
-from border import Border
 from settings import *
 
 class Player(pg.sprite.Sprite):

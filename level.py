@@ -1,4 +1,5 @@
 import pygame as pg
+from enemy import Type_A, Type_a
 from settings import *
 
 from player import Player
@@ -16,6 +17,7 @@ class Level:
         self.visible_sprites = pg.sprite.Group()
         self.obstacle_sprites = pg.sprite.Group()
         self.benevolent_sprites = pg.sprite.Group()
+        self.bad_sprites = pg.sprite.Group()
         
         self.create_map()
   
@@ -30,6 +32,10 @@ class Level:
                     self.player = Player((x,y),[self.visible_sprites],self.obstacle_sprites)
                 if col == 'e':
                     Exit((x-24,y),[self.visible_sprites, self.benevolent_sprites])
+                if col == 'a':
+                    Type_a((x,y), [self.visible_sprites, self.bad_sprites], self.obstacle_sprites)
+                if col == 'A':
+                    Type_A((x,y), [self.visible_sprites, self.bad_sprites], self.obstacle_sprites)
                     
     def run(self):
         self.visible_sprites.draw(self.display_surface)
