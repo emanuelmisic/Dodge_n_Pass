@@ -14,7 +14,7 @@ class Game:
         pg.display.set_caption("Dodge 'n Pass")
         self.clock = pg.time.Clock()
         
-        self.level = Level()
+        self.level = Level(2)
         
     def run(self):
         while True:

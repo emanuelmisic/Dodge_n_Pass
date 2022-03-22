@@ -8,7 +8,9 @@ from exit import Exit
 
 
 class Level:
-    def __init__(self):
+    def __init__(self, level):
+        
+        self.level = level-1
 
         # get the display surface
         self.display_surface = pg.display.get_surface()
@@ -22,7 +24,7 @@ class Level:
         self.create_map()
   
     def create_map(self):
-        for row_index,row in enumerate(LEVEL1_MAP):
+        for row_index,row in enumerate(LEVEL_MAP[self.level]):
             for col_index, col in enumerate(row):
                 x = col_index * TILE_SIZE
                 y = row_index * TILE_SIZE
