@@ -2,13 +2,16 @@ import pygame as pg
 from settings import *
 
 class Player(pg.sprite.Sprite):
-    def __init__(self,pos,groups,obstacle_sprites):
+    def __init__(self,pos,groups,obstacle_sprites,benevolent_sprites,bad_sprites):
         super().__init__(groups)
         self.image = pg.image.load(os.path.join('assets', 'player.png'))
         self.rect = self.image.get_rect(topleft = pos)
 
         self.obstacle_sprites = obstacle_sprites
-
+        self.benevolent_sprites = benevolent_sprites
+        self.bad_sprites = bad_sprites
+        
+        self.pos = pos
         self.direction = pg.math.Vector2()
         self.speed = 4.5
 
@@ -54,6 +57,9 @@ class Player(pg.sprite.Sprite):
                         self.rect.bottom = sprite.rect.top
                     if self.direction.y < 0: # moving up
                         self.rect.top = sprite.rect.bottom
+            for sprite in self.bad_sprites:
+                if sprite.rect.colliderect(self.rect):
+                    self.rect.topleft = self.pos
 
     def update(self):
         self.input()

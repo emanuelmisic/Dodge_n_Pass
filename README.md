@@ -1,2 +1,7 @@
 # Dodge_n_Pass
-Classic setup for the game sprites.
+A game where you have to avoid enemies to pass the levels.
+
+- Many levels
+- Many enemies
+- Bosses
+- and more...
