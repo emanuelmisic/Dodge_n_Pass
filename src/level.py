@@ -1,4 +1,4 @@
-import pygame as pgm
+import pygame
 from entites.enemy import Type_A, Type_a
 from settings import *
 
@@ -13,13 +13,13 @@ class Level:
         self.level = level-1
 
         # get the display surface
-        self.display_surface = pgm.display.get_surface()
+        self.display_surface = pygame.display.get_surface()
 
         # sprite group setup
-        self.visible_sprites = pgm.sprite.Group()
-        self.obstacle_sprites = pgm.sprite.Group()
-        self.benevolent_sprites = pgm.sprite.Group()
-        self.bad_sprites = pgm.sprite.Group()
+        self.visible_sprites = pygame.sprite.Group()
+        self.obstacle_sprites = pygame.sprite.Group()
+        self.benevolent_sprites = pygame.sprite.Group()
+        self.bad_sprites = pygame.sprite.Group()
 
         self.create_map()
 
