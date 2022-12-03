@@ -2,4 +2,5 @@
 A game where you have to avoid enemies to pass the levels.
 
 - Stay tuned for updates...
-- 
+
+#### Pygame docs: https://www.pygame.org/docs/
