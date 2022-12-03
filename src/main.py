@@ -1,33 +1,33 @@
-import pygame as pg
+import pygame as pgm
 from sys import exit
 from level import Level
 
 from settings import *
 
-BG = pg.image.load(os.path.join('assets', 'background_1.png'))
+BG = pgm.image.load(os.path.join('assets', 'background_1.png'))
 
-pg.init()
-screen = pg.display.set_mode((WIDTH, HEIGHT))
-pg.display.set_caption("Dodge 'n Pass")
-clock = pg.time.Clock()
+pgm.init()
+screen = pgm.display.set_mode((WIDTH, HEIGHT))
+pgm.display.set_caption("Dodge 'n Pass")
+clock = pgm.time.Clock()
 
 
 class Game:
-    def __init__(self, level_n):
+    def __init__(self, level_num):
 
-        self.level_n = level_n
-        self.level = Level(level_n)
+        self.level_num = level_num
+        self.level = Level(level_num)
 
     def run(self):
         while True:
-            for event in pg.event.get():
-                if event.type == pg.QUIT:
-                    pg.quit()
+            for event in pgm.event.get():
+                if event.type == pgm.QUIT:
+                    pgm.quit()
                     exit()
 
             screen.blit(BG, (0, 0))
             self.level.run()
-            pg.display.update()
+            pgm.display.update()
             clock.tick(FPS)
 
 
@@ -37,16 +37,16 @@ class Menu:
 
     def run(self):
         while True:
-            for event in pg.event.get():
-                if event.type == pg.QUIT:
-                    pg.quit()
+            for event in pgm.event.get():
+                if event.type == pgm.QUIT:
+                    pgm.quit()
                     exit()
-                if event.type == pg.MOUSEBUTTONDOWN:
-                    game = Game(2)
+                if event.type == pgm.MOUSEBUTTONDOWN:
+                    game = Game(1)
                     game.run()
 
             screen.fill((0, 0, 0))
-            pg.display.update()
+            pgm.display.update()
             clock.tick(FPS)
 
 

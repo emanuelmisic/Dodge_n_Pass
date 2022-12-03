@@ -1,8 +1,8 @@
-import pygame as pg
+import pygame as pgm
 from settings import *
 
 
-class Enemy(pg.sprite.Sprite):
+class Enemy(pgm.sprite.Sprite):
     def __init__(self, groups):
         super().__init__(groups)
 
@@ -10,12 +10,12 @@ class Enemy(pg.sprite.Sprite):
 class Type_a(Enemy):
     def __init__(self, pos, groups, obstacle_sprites):
         super().__init__(groups)
-        self.image = pg.image.load(os.path.join('assets', 'enemy_type_a.png'))
+        self.image = pgm.image.load(os.path.join('assets', 'enemy_type_a.png'))
         self.rect = self.image.get_rect(topleft=pos)
 
         self.obstacle_sprites = obstacle_sprites
 
-        self.direction = pg.math.Vector2(x=-1)
+        self.direction = pgm.math.Vector2(x=-1)
         self.speed = 3
 
     def move(self, speed):
@@ -37,12 +37,12 @@ class Type_a(Enemy):
 class Type_A(Enemy):
     def __init__(self, pos, groups, obstacle_sprites):
         super().__init__(groups)
-        self.image = pg.image.load(os.path.join('assets', 'enemy_type_a.png'))
+        self.image = pgm.image.load(os.path.join('assets', 'enemy_type_a.png'))
         self.rect = self.image.get_rect(topleft=pos)
 
         self.obstacle_sprites = obstacle_sprites
 
-        self.direction = pg.math.Vector2(y=-1)
+        self.direction = pgm.math.Vector2(y=-1)
         self.speed = 3
 
     def move(self, speed):

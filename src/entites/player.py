@@ -1,11 +1,11 @@
-import pygame as pg
+import pygame as pgm
 from settings import *
 
 
-class Player(pg.sprite.Sprite):
+class Player(pgm.sprite.Sprite):
     def __init__(self, pos, groups, obstacle_sprites, benevolent_sprites, bad_sprites):
         super().__init__(groups)
-        self.image = pg.image.load(os.path.join('assets', 'player.png'))
+        self.image = pgm.image.load(os.path.join('assets', 'player.png'))
         self.rect = self.image.get_rect(topleft=pos)
 
         self.obstacle_sprites = obstacle_sprites
@@ -13,22 +13,22 @@ class Player(pg.sprite.Sprite):
         self.bad_sprites = bad_sprites
 
         self.pos = pos
-        self.direction = pg.math.Vector2()
+        self.direction = pgm.math.Vector2()
         self.speed = 4.5
 
     def input(self):
-        keys = pg.key.get_pressed()
+        keys = pgm.key.get_pressed()
 
-        if keys[pg.K_UP]:
+        if keys[pgm.K_UP]:
             self.direction.y = -1
-        elif keys[pg.K_DOWN]:
+        elif keys[pgm.K_DOWN]:
             self.direction.y = 1
         else:
             self.direction.y = 0
 
-        if keys[pg.K_RIGHT]:
+        if keys[pgm.K_RIGHT]:
             self.direction.x = 1
-        elif keys[pg.K_LEFT]:
+        elif keys[pgm.K_LEFT]:
             self.direction.x = -1
         else:
             self.direction.x = 0
