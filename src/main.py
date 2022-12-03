@@ -5,10 +5,10 @@ from level import Level
 from settings import *
 
 pygame.init()
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Dodge 'n Pass")
 clock = pygame.time.Clock()
 
+font = pygame.font.Font(None, 64)
 
 class Game:
     def __init__(self, level_num):
@@ -39,12 +39,15 @@ class Menu:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     exit()
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    game = Game(1)
-                    game.run()
+                # if event.type == pygame.MOUSEBUTTONDOWN:
+                #     game = Game(1)
+                #     game.run()
 
             screen.fill((0, 0, 0))
-            pygame.draw.rect(screen, (255, 255, 255), (240, 100, 100, 100))
+            pygame.draw.rect(screen, white, (play_btn_pos))
+            text = font.render("Play", True, black)
+            textpos = text.get_rect(x=center_x, y=center_y)
+            screen.blit(text, textpos)
             pygame.display.update()
             clock.tick(FPS)
 
