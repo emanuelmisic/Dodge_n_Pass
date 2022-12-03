@@ -39,9 +39,9 @@ class Menu:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     exit()
-                # if event.type == pygame.MOUSEBUTTONDOWN:
-                #     game = Game(1)
-                #     game.run()
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    game = Game(1)
+                    game.run()
 
             screen.fill((0, 0, 0))
             pygame.draw.rect(screen, white, (play_btn_pos))
