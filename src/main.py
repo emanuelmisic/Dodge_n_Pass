@@ -4,8 +4,6 @@ from level import Level
 
 from settings import *
 
-BG = pygame.image.load(os.path.join('assets', 'background_1.png'))
-
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Dodge 'n Pass")
@@ -25,7 +23,7 @@ class Game:
                     pygame.quit()
                     exit()
 
-            screen.blit(BG, (0, 0))
+            screen.blit(BG1, (0, 0))
             self.level.run()
             pygame.display.update()
             clock.tick(FPS)
@@ -41,12 +39,12 @@ class Menu:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     exit()
-                # if event.type == pygame.MOUSEBUTTONDOWN:
-                #     game = Game(1)
-                #     game.run()
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    game = Game(1)
+                    game.run()
 
             screen.fill((0, 0, 0))
-            # pygame.draw.rect(screen, (255, 255, 255), )
+            pygame.draw.rect(screen, (255, 255, 255), (240, 100, 100, 100))
             pygame.display.update()
             clock.tick(FPS)
 
