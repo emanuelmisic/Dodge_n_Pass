@@ -6,7 +6,8 @@ screen = pygame.display.set_mode((864, 864))
 white = (255, 255, 255)
 black = (0, 0, 0)
 
-# Menu Variables
+### Menu Variables
+# Buttons
 center_x = screen.get_width() / 2
 center_y = screen.get_height() / 2
 fill_x = 300

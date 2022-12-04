@@ -8,11 +8,14 @@ pygame.init()
 pygame.display.set_caption("Dodge 'n Pass")
 clock = pygame.time.Clock()
 
-font = pygame.font.Font(None, 64)
+def display_button_text(text):
+        font = pygame.font.Font(None, 64)
+        text_to_display = font.render(text, True, black)
+        textpos = text_to_display.get_rect(x=center_x, y=center_y)
+        screen.blit(text_to_display, textpos)
 
 class Game:
     def __init__(self, level_num):
-
         self.level_num = level_num
         self.level = Level(level_num)
 
@@ -45,12 +48,9 @@ class Menu:
 
             screen.fill((0, 0, 0))
             pygame.draw.rect(screen, white, (play_btn_pos))
-            text = font.render("Play", True, black)
-            textpos = text.get_rect(x=center_x, y=center_y)
-            screen.blit(text, textpos)
+            display_button_text("Play")
             pygame.display.update()
             clock.tick(FPS)
-
 
 if __name__ == '__main__':
     menu = Menu()
