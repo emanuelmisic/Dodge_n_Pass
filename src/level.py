@@ -5,7 +5,7 @@ from map import *
 
 from entites.player import Player
 from entites.border import Border
-from exit import Exit
+from entites.exit import Exit
 
 
 class Level:
