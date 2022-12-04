@@ -1,6 +1,6 @@
 import pygame
 from sys import exit
-from level import Level
+from components.level import Level
 
 from settings import *
 

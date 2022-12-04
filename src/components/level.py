@@ -1,7 +1,7 @@
 import pygame
 from entites.enemy import Type_A, Type_a
 from settings import *
-from map import *
+from components.map import *
 
 from entites.player import Player
 from entites.border import Border
