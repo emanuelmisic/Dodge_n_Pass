@@ -3,16 +3,17 @@ from sys import exit
 from components.level import Level
 
 from settings import *
+from components.button import Button
 
 pygame.init()
 pygame.display.set_caption("Dodge 'n Pass")
 clock = pygame.time.Clock()
 
-def display_button_text(text):
-        font = pygame.font.Font(None, 64)
-        text_to_display = font.render(text, True, black)
-        textpos = text_to_display.get_rect(x=center_x, y=center_y)
-        screen.blit(text_to_display, textpos)
+#load button images
+start_img = pygame.image.load('assets\start_game_btn.png').convert_alpha()
+
+#create button instances
+start_button = Button(100, 200, start_img, 0.9)
 
 class Game:
     def __init__(self, level_num):
@@ -43,12 +44,16 @@ class Menu:
                     pygame.quit()
                     exit()
                 if event.type == pygame.MOUSEBUTTONDOWN:
-                    game = Game(1)
-                    game.run()
+                    pass
+                    # game = Game(1)
+                    # game.run()
 
             screen.fill((0, 0, 0))
-            pygame.draw.rect(screen, white, (play_btn_pos))
-            display_button_text("Play")
+            
+            if start_button.draw(screen):
+                game = Game(1)
+                game.run()
+            
             pygame.display.update()
             clock.tick(FPS)
 
