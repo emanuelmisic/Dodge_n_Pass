@@ -1,4 +1,5 @@
 LEVEL_MAP = [
+    # LEVEL 1:
     [
         ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', ' ', 'e', ' ', 'x', 'x'],
         ['x', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'x', ' ', ' ', ' ', ' ', ' ', 'x'],
@@ -19,6 +20,7 @@ LEVEL_MAP = [
         ['x', ' ', ' ', ' ', ' ', 'x', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'x'],
         ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
     ],
+    # LEVEL 2:
     [
         ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', ' ', 'e', ' ', 'x', 'x'],
         ['x', 'a', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'x', ' ', 'x', ' ', ' ', ' ', ' ', ' ', 'x'],
@@ -45,14 +47,14 @@ LEVEL_MAP = [
 # x --- BORDER
 # w --- KILLING BORDER
 # p --- PLAYER
-# a --- SLOW_GREEN_ENEMY_HORIZONTAL
 # A --- SLOW_GREEN_ENEMY_VERTICAL
-# b --- FAST_GREEN_ENEMY_HORIZONTAL
+# a --- SLOW_GREEN_ENEMY_HORIZONTAL
 # B --- FAST_GREEN_ENEMY_VERTICAL
-# c --- BLUE_SHOOTING_ENEMY_HORIZONTAL
+# b --- FAST_GREEN_ENEMY_HORIZONTAL
 # C --- BLUE_SHOOTING_ENEMY_VERTICAL
-# d --- STATIC_LASER_ENEMY_RIGHT
-# D --- STATIC_LASER_ENEMY_LEFT
+# c --- BLUE_SHOOTING_ENEMY_HORIZONTAL
+# D --- STATIC_LASER_ENEMY_RIGHT
+# d --- STATIC_LASER_ENEMY_LEFT
 # e --- EXIT
-# f --- STATIC_LASER_ENEMY_UP
-# F --- STATIC_LASER_ENEMY_DOWN
+# F --- STATIC_LASER_ENEMY_UP
+# f --- STATIC_LASER_ENEMY_DOWN
