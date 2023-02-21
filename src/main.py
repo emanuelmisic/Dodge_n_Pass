@@ -47,10 +47,6 @@ class Menu:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     exit()
-                # if event.type == pygame.MOUSEBUTTONDOWN:
-                #     pass
-                    # game = Game(1)
-                    # game.run()
 
             screen.fill((0, 0, 0))
             
