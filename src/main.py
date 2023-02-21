@@ -9,11 +9,15 @@ pygame.init()
 pygame.display.set_caption("Dodge 'n Pass")
 clock = pygame.time.Clock()
 
-#load button images
+# load button images
 start_img = pygame.image.load('assets\start_game_btn.png').convert_alpha()
 
-#create button instances
-start_button = Button(WIDTH / 2 - 140, HEIGHT / 2 - 300, start_img, 1)
+# create button instances
+# start
+start_button = Button(0, 0, start_img)
+start_button_width = start_button.get_width()
+start_button_height = start_button.get_height()
+start_button_draw = Button((WIDTH / 2) - (start_button_width / 2), (HEIGHT / 4) - (start_button_height / 2), start_img)
 
 class Game:
     def __init__(self, level_num):
@@ -50,7 +54,7 @@ class Menu:
 
             screen.fill((0, 0, 0))
             
-            if start_button.draw(screen):
+            if start_button_draw.draw(screen):
                 game = Game(1)
                 game.run()
             
