@@ -15,12 +15,6 @@ CONCEPT:
                 sfx_vol()
             - Reset Progress
                 reset_all()
-        - Shop
-            - skins
-                skin_selection()
-            - upgrade
-                - upgrade movement speed
-        - Reset Progress
         - Exit
             quit()
 
@@ -28,4 +22,4 @@ CONCEPT:
         - Select Level
             level_selection()
                 - Level x
-                    game()
+                    game(level)
