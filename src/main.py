@@ -1,9 +1,10 @@
 import pygame
 from sys import exit
 from components.level import Level
+from components.button import Button
+from entites.player import Player
 
 from settings import *
-from components.button import Button
 
 pygame.init()
 pygame.display.set_caption("Dodge 'n Pass")
@@ -42,7 +43,6 @@ class Game:
             pygame.display.update()
             clock.tick(FPS)
 
-
 class Menu:
     def run(self):
         while True:
@@ -54,7 +54,7 @@ class Menu:
             screen.fill((0, 0, 0))
             
             if start_button_draw.draw(screen):
-                game = Game(2)
+                game = Game(1)
                 game.run()
             
             if quit_button_draw.draw(screen):
