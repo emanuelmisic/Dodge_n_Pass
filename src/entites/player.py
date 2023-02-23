@@ -15,6 +15,8 @@ class Player(pygame.sprite.Sprite):
         self.pos = pos
         self.direction = pygame.math.Vector2()
         self.speed = 4.5
+        
+        self.exit_reached = False
 
     def input(self):
         keys = pygame.key.get_pressed()
@@ -58,9 +60,14 @@ class Player(pygame.sprite.Sprite):
                         self.rect.bottom = sprite.rect.top
                     if self.direction.y < 0:  # moving up
                         self.rect.top = sprite.rect.bottom
-            for sprite in self.bad_sprites:
-                if sprite.rect.colliderect(self.rect):
-                    self.rect.topleft = self.pos
+        
+        for sprite in self.bad_sprites:
+            if sprite.rect.colliderect(self.rect):
+                self.rect.topleft = self.pos
+        
+        for sprite in self.benevolent_sprites:
+            if sprite.rect.colliderect(self.rect):
+                self.exit_reached = True
 
     def update(self):
         self.input()
