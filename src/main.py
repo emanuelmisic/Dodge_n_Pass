@@ -44,9 +44,6 @@ class Game:
 
 
 class Menu:
-    def __init__(self):
-        pass
-
     def run(self):
         while True:
             for event in pygame.event.get():
@@ -57,7 +54,7 @@ class Menu:
             screen.fill((0, 0, 0))
             
             if start_button_draw.draw(screen):
-                game = Game(1)
+                game = Game(2)
                 game.run()
             
             if quit_button_draw.draw(screen):
