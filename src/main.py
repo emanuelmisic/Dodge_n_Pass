@@ -10,6 +10,8 @@ pygame.init()
 pygame.display.set_caption("Dodge 'n Pass")
 clock = pygame.time.Clock()
 
+game_state = ''
+
 # load button images
 start_img = pygame.image.load('assets\start_game_btn.png').convert_alpha()
 quit_img = pygame.image.load('assets/quit_btn.png').convert_alpha()
@@ -32,7 +34,8 @@ class Game:
         self.level = Level(level_num)
 
     def run(self):
-        while True:
+        game_state = GameState.START
+        while game_state == GameState.START:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -45,7 +48,9 @@ class Game:
 
 class Menu:
     def run(self):
-        while True:
+        game_state = GameState.MENU
+        while game_state == GameState.MENU:
+        
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
