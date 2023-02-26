@@ -2,7 +2,6 @@ import pygame
 from sys import exit
 from components.level import Level
 from components.button import Button
-from entites.player import Player
 
 from settings import *
 
