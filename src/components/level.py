@@ -1,5 +1,5 @@
 import pygame
-from entites.enemy import Type_A, Type_a
+from entites.enemy import Type_A, Type_a, Type_b
 from settings import *
 from components.map import *
 
@@ -39,6 +39,8 @@ class Level:
                     Type_a((x, y), [self.visible_sprites, self.bad_sprites], self.obstacle_sprites)
                 if col == 'A':
                     Type_A((x, y), [self.visible_sprites, self.bad_sprites], self.obstacle_sprites)
+                if col == 'b':
+                    Type_b((x, y), [self.visible_sprites, self.bad_sprites], self.obstacle_sprites)
 
     def run(self):
         self.visible_sprites.draw(self.display_surface)
