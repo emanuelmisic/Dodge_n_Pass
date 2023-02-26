@@ -43,6 +43,8 @@ class Level:
     def run(self):
         self.visible_sprites.draw(self.display_surface)
         self.visible_sprites.update()
-        
+    
+    def is_exit_reached(self):
         if self.player.exit_reached:
-            print('exit')
+            return True
+        return False
