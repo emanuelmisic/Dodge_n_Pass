@@ -1,6 +1,8 @@
 import os
 import pygame
 
+from enum import Enum
+
 screen = pygame.display.set_mode((864, 864))
 
 white = (255, 255, 255)
@@ -13,5 +15,8 @@ WIDTH = 864
 FPS = 60
 TILE_SIZE = 48
 
-GAME_STATE_START = 'START'
-GAME_STATE_MENU = 'MENU'
+class GameState(Enum):
+    START = 'START'
+    MENU = 'MENU'
+    PAUSE = 'PAUSE'
+    STOP = 'STOP'

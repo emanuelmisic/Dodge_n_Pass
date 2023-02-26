@@ -1,13 +1,15 @@
 import pygame
 from sys import exit
 from components.level import Level
+from components.button import Button
+from entites.player import Player
 
 from settings import *
-from components.button import Button
 
 pygame.init()
 pygame.display.set_caption("Dodge 'n Pass")
 clock = pygame.time.Clock()
+
 
 # load button images
 start_img = pygame.image.load('assets\start_game_btn.png').convert_alpha()
@@ -31,7 +33,9 @@ class Game:
         self.level = Level(level_num)
 
     def run(self):
-        while True:
+        game_state = GameState.START
+        while game_state == GameState.START:
+            
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -41,14 +45,34 @@ class Game:
             self.level.run()
             pygame.display.update()
             clock.tick(FPS)
+            
+            if self.level.is_exit_reached():
+                game_state = GameState.STOP
+            
+            
+            while game_state == GameState.STOP:
+                
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        pygame.quit()
+                        exit()
+                
+                keys = pygame.key.get_pressed()
 
+                if keys[pygame.K_SPACE]:
+                    game = Game(self.level_num + 1)
+                    game.run()
+                
+                screen.fill((255, 255, 255))
+                pygame.display.update()
+                clock.tick(FPS)
+                
 
 class Menu:
-    def __init__(self):
-        pass
-
     def run(self):
-        while True:
+        game_state = GameState.MENU
+        while game_state == GameState.MENU:
+        
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
