@@ -34,7 +34,7 @@ class Level:
                 if col == 'p':
                     self.player = Player((x, y), [self.visible_sprites], self.obstacle_sprites, self.benevolent_sprites, self.bad_sprites)
                 if col == 'e':
-                    Exit((x-24, y), [self.visible_sprites, self.benevolent_sprites])
+                    Exit((x-1, y), [self.visible_sprites, self.benevolent_sprites])
                 if col == 'a':
                     Type_a((x, y), [self.visible_sprites, self.bad_sprites], self.obstacle_sprites)
                 if col == 'A':
