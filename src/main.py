@@ -9,12 +9,26 @@ pygame.init()
 pygame.display.set_caption("Dodge 'n Pass")
 clock = pygame.time.Clock()
 
+# display title function
+def display_title(str):
+    level_font = pygame.font.Font('assets/level_font.ttf', 32)
+    level_text = level_font.render(str, True, (255, 255, 255))
+    level_text_rect = level_text.get_rect()
+    level_text_rect.center = (WIDTH / 2, HEIGHT / 3)
+    screen.blit(level_text, level_text_rect)
+    
+def display_advance_level_text(str):
+    advance_level_font = pygame.font.Font('assets/instructions_font.ttf', 28)
+    advance_level_text = advance_level_font.render(str, True, (255, 255, 255))
+    advance_level_text_rect = advance_level_text.get_rect()
+    advance_level_text_rect.center = (WIDTH / 2, HEIGHT / 2)
+    screen.blit(advance_level_text, advance_level_text_rect)
 
 # load button images
 start_img = pygame.image.load('assets\start_game_btn.png').convert_alpha()
 quit_img = pygame.image.load('assets/quit_btn.png').convert_alpha()
 
-# create button instances
+# create button instances:
 # start
 start_button = Button(0, 0, start_img)
 start_button_width = start_button.get_width()
@@ -32,6 +46,7 @@ class Game:
         self.level = Level(level_num)
 
     def run(self):
+        once = True
         game_state = GameState.START
         while game_state == GameState.START:
             
@@ -61,8 +76,13 @@ class Game:
                 if keys[pygame.K_SPACE]:
                     game = Game(self.level_num + 1)
                     game.run()
-                
-                screen.fill((255, 255, 255))
+                    
+                if once:
+                    screen.blit(pause_bg, (0, 0))
+                    display_title(f'Level {self.level_num} Completed')
+                    display_advance_level_text(f'Press SPACE to advance to level {self.level_num + 1}')
+                    once = False
+                    
                 pygame.display.update()
                 clock.tick(FPS)
                 
