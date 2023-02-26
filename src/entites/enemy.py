@@ -17,7 +17,7 @@ class Type_a(Enemy):
         self.obstacle_sprites = obstacle_sprites
 
         self.direction = pygame.math.Vector2(x=-1)
-        self.speed = 3
+        self.speed = 2.8
 
     def move(self, speed):
         self.rect.x += self.direction.x * speed
@@ -45,7 +45,7 @@ class Type_A(Enemy):
         self.obstacle_sprites = obstacle_sprites
 
         self.direction = pygame.math.Vector2(y=-1)
-        self.speed = 3
+        self.speed = 2.8
 
     def move(self, speed):
         self.rect.y += self.direction.y * speed
