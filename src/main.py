@@ -55,7 +55,11 @@ class Game:
                     pygame.quit()
                     exit()
 
-            screen.blit(BG1, (0, 0))
+            if self.level_num < 10:
+                screen.blit(BG1, (0, 0))
+            elif self.level_num >= 10:
+                screen.blit(BG2, (0, 0))
+            
             self.level.run()
             pygame.display.update()
             clock.tick(FPS)
