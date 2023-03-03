@@ -4,6 +4,7 @@ import pygame
 from enum import Enum
 
 BG1 = pygame.image.load(os.path.join('assets', 'background_1.png'))
+BG2 = pygame.image.load(os.path.join('assets', 'background_2.png'))
 
 HEIGHT = 864
 WIDTH = 864
